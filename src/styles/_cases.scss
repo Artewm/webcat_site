@@ -1,0 +1,349 @@
+@use 'variables' as *;
+
+.cases {
+    width: 100%;
+    height: 207vw;
+    margin: 3.3854vw 0 0 0;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 211vw;
+        background-color: $black;
+        border-radius: 3.6458vw 3.6458vw 0 0;
+        z-index: -10;
+    }
+
+    border-radius: 3.6458vw 3.6458vw 0 0;
+    background: $black;
+
+    display: flex;
+
+    .cases_head {
+        position: relative;
+        width: 91.6666vw;
+        height: 29.01vw;
+
+        border-radius: 2.0833vw;
+        
+        overflow: hidden;
+
+        h2 {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            margin: 0%;
+            color: $warm-white;
+        }
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .cases_line1, .cases_line2 {
+        display: flex;
+    }
+
+    .cases_wrapper {
+        margin: 3.125vw 4.1666vw 0 4.1666vw ;
+    }
+
+    .case_small {
+        position: relative;
+        width: 30.677vw;
+        height: 23.9583vw;
+        overflow: hidden;
+        border-radius: 2.0833vw;
+        margin: 1.7708vw 0 0 0; 
+
+        &::after {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            content: "Скоро";
+            color: $main-black;    
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            background-color: $warm-white;
+            width: 99.6%;
+            height: 99.6%;
+            border-radius: 2.0833vw;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+
+        & > img, & > video {
+            position: absolute;
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    }
+
+    .corousel_block {
+        position: relative;
+        width: 59vw;
+        height: 49.6874vw;
+        background-color: $corousel_back;
+        margin: 1.7708vw 0 0 1.7708vw;
+        border-radius: 2.0833vw;
+        overflow: hidden; /* Чтобы содержимое не выходило за границы */
+    }
+    
+    .corousel_wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Центрирование карусели */
+        perspective: 52.0833vw; /* Добавляем перспективу для 3D-эффекта */
+    }
+    
+    .carousel {
+        position: relative;
+        width: 20vw;
+        height: 13vw;
+        transform-style: preserve-3d;
+        transform-origin: center; /* Устанавливаем центр вращения */
+        animation: rotate 60s linear infinite; /* Вращение по часовой стрелке */
+        margin: 18.3vw auto; /* Центрируем карусель внутри wrapper */
+    }
+      
+    .card {
+        position: absolute;
+        width: 20vw;
+        height: 13vw;
+        background: #fff;
+        border-radius: 1.041vw;
+        overflow: hidden;
+        transform: rotateY(calc(var(--i) * 60deg)) translateZ(18.75vw); /* Размещение по окружности */
+    }
+      
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Анимация вращения карусели */
+    @keyframes rotate {
+        0% {
+            transform: rotateX(20deg) rotateZ(30deg) rotateY(0deg);
+        }
+        25% {
+            transform: rotateX(-15deg) rotateZ(0deg) rotateY(180deg);
+        }
+        50% {
+            transform: rotateX(20deg) rotateZ(-30deg) rotateY(360deg);
+        }
+        75% {
+            transform: rotateX(-15deg) rotateZ(0deg) rotateY(540deg);
+        }
+        100% {
+            transform: rotateX(20deg) rotateZ(30deg) rotateY(720deg);
+        }
+    }
+
+    .case_horizontal_video::after, 
+    .case_vertical_video::after, 
+    .case_large_video::after {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        content: "Скоро";
+        color: $main-black;    
+    }
+
+    .case_horizontal_video::before, 
+    .case_vertical_video::before, 
+    .case_large_video::before{
+        position: absolute;
+        content: "";
+        background-color: $warm-white;
+        width: 99.6%;
+        height: 99.6%;
+        border-radius: 2.0833vw;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+
+    .case_horizontal_video > video, 
+    .case_vertical_video > video, 
+    .case_large_video > video {
+        position: absolute;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .cases_line2 {
+        .cases_merger {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case_horizontal_video {
+            width: 63.177vw;
+            height: 23.59375vw;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2.0833vw;
+            margin: 1.7708vw 0 0 0;
+        }
+
+        .case_vertical_video {
+            width: 26.71875vw;
+            height: 49.84210vw;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2.0833vw;
+            margin: 1.7708vw 0 0 1.65vw;
+        }
+    }
+
+    .cases_line3 {
+        display: flex;
+        .case_small {
+            width: 26.7708vw;
+            height: 23.9583vw;
+            margin: 0 0 0 1.7708vw;
+
+            &:nth-of-type(odd) {
+                margin: 1.7708vw 0 1.7708vw 1.7708vw;
+            }
+        }
+
+
+        .case_large_video {
+            width: 63.125vw;
+            height: 49.7916vw;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2.0833vw;
+            margin: 1.7708vw 0 0 0;
+        }
+    }
+
+    .cases_horizontal_wrapper {
+        display: flex;
+
+        margin: 1.7708vw 0 0 0;
+
+        .case_small {
+            margin: 0%;
+        }
+
+        div:nth-child(odd) {
+            margin: 0 1.7708vw 0 0;
+        }
+    }
+
+    .cases_foot {
+        width: 91.6666vw;
+        height: 12.4479vw;
+        margin: 3.5416vw 0 0 0;
+        border-radius: 2.0833vw;
+        background-color: $warm-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .partner_block1 {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15vw;
+
+            div {
+                position: relative;
+                width: 25.677vw;
+                height: 5.8125vw;
+                background-color: $black;
+                border-radius: 2.0833vw;
+
+                img {
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%, -50%);
+                }
+            }
+        }
+
+        .partner_block2 {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15vw;
+            margin: 0 0.15vw;
+
+            .partner_regular_block {
+                position: relative;
+                width: 33.6979vw;
+                height: 5.7812vw;
+                background-color: $black;
+                border-radius: 2.0833vw;
+            }
+
+            img {
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%, -50%);
+            }
+
+            .partner_block_merge {
+                display: flex;
+            }
+
+            .partner_small {
+                position: relative;
+                height: 5.78125vw;
+                background-color: $black;
+                border-radius: 2.0833vw;
+
+                &:nth-of-type(odd) {
+                    width: 17.4479vw;
+                }
+                &:nth-of-type(even) {
+                    width: 16.25vw;
+                }
+            }
+        }
+        .partner_block3 {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15vw;
+
+            div {
+                position: relative;
+                width: 30.052vw;
+                height: 5.8125vw;
+                background-color: $black;
+                border-radius: 2.0833vw;
+
+                img {
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}

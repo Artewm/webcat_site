@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use 'mainLogo';
+@use 'info_about_us';
+
+.stub_block {
+    width: 100%;
+    height: 10vw;
+
+    background-color: $warm-white;
+}

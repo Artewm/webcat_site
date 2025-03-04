@@ -1,0 +1,282 @@
+@use 'variables' as *;
+
+.info_about_us {
+    margin: 11.979vw 0 0 0;
+    display: flex;
+    justify-content: center;
+
+    .description_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 9.375vw;
+        
+        button {
+            color: $warm-white;
+            background-color: $black;
+            border: none;
+            border-radius: 2.0833vw 2.0833vw 0px 2.0833vw;
+            padding: 0.4166vw 3.0208vw;
+    
+            height: 3.958vw;
+    
+            &:hover {
+                background-color: $cat-blue;
+            }
+        }
+       
+    }
+    //Здесь анимация 
+    .background_hover_left, .background_hover_right {
+        position: absolute;
+        bottom: -5%;
+        right: -3.3%;
+        transform: rotate(45deg);
+        border-radius: 0.4vw;
+        background-color: none;
+
+        height: 2.5vw;
+        width: 3vw;
+
+        filter: url("#goo");
+
+        .block_hover_left {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            height: 2.5vw;
+            width: 3vw;
+            overflow: hidden;
+            //background-color: $cat-blue;
+        }
+        .container-anim{
+            z-index: 111;
+            position: relative;
+        }
+        .waves {
+            filter: url('#goo');
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    
+        .wave-left, .wave-right {
+            width: 120%;
+            height: 100%;
+            position: absolute;
+            background: transparent;
+            top: -10%;
+        }
+    
+        .wave-left {
+            z-index: 1111;
+            left: -3.865vw;
+            // animation: wave-left 5s infinite ease-in-out;
+            border-radius: 0 0 50% 50%;
+            animation-iteration-count: 1;
+        }
+    
+        .wave-right {
+            z-index: 1111;
+            right: -3.865vw;
+            // animation: wave-right 5s infinite ease-in-out;
+            border-radius: 50% 50% 0 0;
+            animation-iteration-count: 1;
+        }
+        
+        
+    
+        @keyframes wave-left {
+            0% {
+                transform: translateX(0);
+                height: 13.021vw;
+            }
+            50% {
+                transform: translateX(35px);
+                height: 26.042vw;
+            }
+            100% {
+                transform: translateX(35px);
+                height: 26.042vw;
+            }
+        }
+    
+        @keyframes wave-right {
+            0% {
+                transform: translateX(0);
+                height: 13.021vw;
+            }
+            50% {
+                transform: translateX(-45px);
+                height: 26.042vw;
+            }
+            100% {
+                transform: translateX(-45px);
+                height: 26.042vw;
+            }
+        }
+        @keyframes wave-left-leave {
+            0% {
+                
+                transform: translateX(35px);
+                height: 26.042vw;
+            }
+            50% {
+                transform: translateX(35px);
+                height: 26.042vw;
+            }
+            100% {
+                transform: translateX(0);
+                height: 13.021vw;
+            }
+        }
+    
+        @keyframes wave-right-leave {
+            0% {
+                transform: translateX(-25px);
+                height: 26.042vw;
+            }
+            50% {
+                transform: translateX(-25px);
+                height: 26.042vw;
+            }
+            100% {
+                
+                transform: translateX(0);
+                height: 13.021vw;
+            }
+        }
+    }
+    .background_hover_right{
+        position: absolute;
+        top: -5% !important;
+        right: -3.3%;
+       transform: rotate(-45deg);
+
+       .block_hover_right {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        height: 2.5vw;
+        width: 3vw;
+        overflow: hidden;
+        //background-color: $cat-blue;
+    }
+
+       .wave-left-2, .wave-right-2 {
+        width: 120%;
+        height: 100%;
+        position: absolute;
+        background: transparent;
+        top: -10%;
+    }
+
+    .wave-left-2 {
+        z-index: 1111;
+        left: -3.865vw;
+        // animation: wave-left 5s infinite ease-in-out;
+        border-radius: 0 0 50% 50%;
+        animation-iteration-count: 1;
+    }
+
+    .wave-right-2 {
+        z-index: 1111;
+        right: -3.865vw;
+        // animation: wave-right 5s infinite ease-in-out;
+        border-radius: 50% 50% 0 0;
+        animation-iteration-count: 1;
+    }
+    }
+    .info_blocks {
+        margin: 5.3645vw 0 0 0;
+        position: relative;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .info_block {
+        position: relative;
+        width: 39.0625vw;
+        height: 20.625vw;
+        padding: 2.4479vw 3.3854vw;
+
+        border-radius: 2.0833vw;
+    }
+
+    #blue_block {
+        background-color: $cat-blue;
+        color: $warm-white;
+    }
+
+    #white_block {
+        background-color: $warm-white;
+        color: $main-black;
+        z-index: 111;
+    }
+    #white_block:nth-child(2){
+        z-index: 111;
+    }
+    #white_btn_info {
+        background-color: $warm-white;
+
+        &:hover {
+            svg path {
+                fill: $cat-blue;
+            }
+        }
+    }
+
+    #blue_btn_info {
+        background-color: $cat-blue;
+
+        svg path {
+            fill: $warm-white;
+        }
+        
+        &:hover {
+            svg path {
+                fill: $main-black;
+            }
+        }
+    }
+
+    .info_btn {
+        position: absolute;
+        top: 0.6770vw;
+        right: 0.625vw;
+
+        border: none;
+        padding: 0.7291vw 1.1458vw 0.4166vw 1.1458vw;
+        border-radius: 2.6041vw 2.6041vw 0 2.6041vw;
+
+        svg {
+            width: 2.34375vw;
+            height: 2.34375vw;
+        }
+    }
+
+    .more_info_btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        border: none;
+        border-radius: 2.0833vw 2.0833vw 0px 2.0833vw;
+        padding: 0.4166vw 3.0208vw;
+        background-color: $main-black;
+        color: $warm-white;
+
+        &:hover {
+            background-color: $cat-blue;
+        }
+    }
+}
+@media screen and (max-width: 1280px){
+    .description_info{
+        flex-direction: column;
+        h1{
+            align-self: flex-start;
+        }
+    }
+}

@@ -1,0 +1,248 @@
+@use 'variables' as *;
+
+@font-face {
+    font-family: 'FactorA-Regular';
+    src: url('/src/fonts/FactorA-Regular.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JxTabeDemoRegular';
+    src: url('/src/fonts/JxTabeDemoRegular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FactorA-Medium';
+    src: url('/src/fonts/FactorA-Medium.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FactorA-Bold';
+    src: url('/src/fonts/FactorA-Bold.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+header p {
+    font-family: 'FactorA-Regular';
+    font-size: 1.875vw;
+    color: #0B0B0B;
+    text-align: right;
+    margin: 0%;
+}
+
+.menu p{
+    color: $main-black;
+}
+
+#menu.menu_opened {
+    .toolbar p, .discuss p {
+    color: $warm-white;
+    }
+}
+
+nav a {
+    color: $warm-white;
+    font-family: 'JxTabeDemoRegular';
+    font-size: 3.75vw;
+}
+
+.discuss_opened {
+    h2 {
+        font-family: 'FactorA-Medium';
+        font-size: 1.4814vh;
+        color: $black;
+        font-weight: normal;
+    }
+
+    span {
+        font-family: 'FactorA-Regular';
+        font-size: 1.4814vh;
+        color: $mouse-gray;
+        font-weight: normal;
+    }
+    span a {
+        font-family: 'FactorA-Medium';
+        font-size: 1.4814vh;
+        color: $mouse-gray;
+        font-weight: normal;
+    }
+
+    input::placeholder {
+        font-family: 'FactorA-Medium';
+        font-size: 3.3333vh;
+    }
+
+    input {
+        font-family: 'FactorA-Regular';
+        font-size: 3.3333vh;
+    }
+}
+
+.discuss_head {
+    h2 {
+        font-family: 'FactorA-Medium';
+        font-size: 3.3333vh;
+        color: $black;
+        font-weight: normal;
+    }
+}
+
+.upload_file {
+    p {
+        font-family: 'FactorA-Medium';
+        font-size: 3.3333vh;
+        color: $asphalt-grey;
+    }
+}
+
+.upload_btn {
+    color: $white;
+
+    font-family: 'FactorA-Medium';
+    font-size: 3.3333vh;
+}
+.info_about_us {
+    .description_info {
+        h1 {
+            font-family: 'FactorA-Bold';
+            font-size: 2.60416vw;
+            font-weight: normal;
+            margin: 0%;
+        }
+
+        span {
+            font-family: 'FactorA-Regular';
+            font-size: 2.60416vw;
+            font-weight: normal;
+        }
+
+        button {
+            font-family: 'FactorA-Medium';
+            font-size: 2.60416vw;
+        }
+    }
+
+    .info_blocks {
+        h2 {
+            font-family: 'FactorA-Medium';
+            font-weight: normal;
+            font-size: 2.6041vw;
+
+            margin: 0 0 1.1979vw 0;
+        }
+
+        p {
+            font-family: 'FactorA-Regular';
+            font-size: 1.5625vw;
+            
+            margin: 0%;
+            width: 33.8020vw;
+        }
+    }
+
+    .more_info_btn {
+        font-family: 'FactorA-Medium';
+        font-size: 2.6041vw;
+    }
+}
+
+.cases {
+    .cases_head {
+        h2 {
+            font-family: 'JxTabeDemoRegular';
+            font-weight: normal;
+            font-size: 13.3333vw;
+        }
+    }
+
+    .case_small, 
+    .case_horizontal_video,
+    .case_vertical_video,
+    .case_large_video {
+        &::after {
+            font-family: 'FactorA-Medium';
+            font-size: 1.875vw;
+        }
+    }
+}
+
+.workers_block {
+    h2 {
+        font-family: 'FactorA-Bold';
+        font-weight: normal;
+        font-size: 2.6041vw;
+
+        span {
+            font-family: 'FactorA-Regular';
+            font-weight: normal;
+            font-size: 2.6041vw;
+        }
+    }
+
+    .workers_corousel {
+        .worker_card {
+            h2 {
+                font-family: 'FactorA-Regular';
+                font-size: 1.875vw;
+                font-weight: normal;
+
+                span {
+                    font-family: 'FactorA-Regular';
+                    font-size: 1.0416vw;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+
+.discuss_block {
+    h2 {
+        font-family: 'JxTabeDemoRegular';
+        font-size: 4.375vw;
+        font-weight: normal;
+    }
+
+    form h2 {
+        font-family: 'FactorA-Medium';
+        font-size: 2.6041vw;
+        font-weight: normal;
+    }
+
+    input, textarea {
+        font-family: 'FactorA-Regular';
+        font-size: 1.875vw;
+    }
+
+    span {
+        font-family: 'FactorA-Regular';
+        font-size: 0.8333vw;
+    }
+    span a {
+        font-family: 'FactorA-Medium';
+        font-size: 0.8333vw;
+    }
+
+    form button {
+        font-family: 'FactorA-Regular';
+        font-size: 1.875vw;
+    }
+}
+
+.footer_nav a,
+.footer_info,
+.company_info {
+    font-family: 'FactorA-Medium';
+    font-size: 1.875vw;
+    font-weight: normal;
+}

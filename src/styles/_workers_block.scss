@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+.workers_block {
+    width: 100%;
+    height: 51.9791vw;
+    border-radius: 3.6458vw 3.6458vw 0 0;
+    background-color: $warm-white;
+    position: relative;
+
+    h2 {
+        display: inline-block;
+        width: 68.125vw;
+        height: 9.375vw;
+        margin: 5.1562vw 0 0 4.1666vw;
+    }
+
+    .workers_corousel {
+        width: 91.6666vw;
+        height: 32vw;
+        margin: 2.6041vw 0 4.427vw 4.1666vw;
+        display: flex;
+        overflow: hidden;
+
+        .run_line {
+            display: flex;
+            animation: run_line 80s linear infinite;
+
+            .worker_card {
+                display: flex;
+                flex-direction: column;
+                margin: 0 2.7083vw 0 0;
+                width: 22.552vw;
+
+                img {
+                    width: 22.552vw;
+                    height: 25.625vw;
+                    border-radius: 2.0833vw 2.0833vw 0px 0px;
+                    object-fit: contain;
+                }
+
+                h2 {
+                    margin: 1.25vw 0 0 0;
+                    height: auto;
+                    width: 22.552vw;
+
+                    span {
+                        color: $mouse-gray;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @keyframes run_line {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}

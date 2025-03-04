@@ -1,0 +1,159 @@
+@use 'variables' as *;
+
+.discuss_block {
+    background-color: $black;
+    border-radius: 3.6458vw 3.6458vw 0px 0px;
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 45.25vw;
+
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 125%;
+        background-color: $black;
+        border-radius: 3.6458vw 3.6458vw 0 0;
+        z-index: -10;
+    }
+
+    .discuss_anim_block {
+        width: 30.36458vw;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            margin: 4.3229vw 0 0 4.1666vw;
+            color: $white;
+            display: inline-block;
+        }
+    }
+
+    form {
+        margin: 9.11458vw 0 0 7.3vw;
+    }
+
+    .discuss_head_part {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            margin: 0%;
+            color: $white;
+            display: inline-block;
+        }
+
+        textarea {
+            border: none;
+            width: 57.1354vw;
+            height: 5.3125vw;
+            resize: vertical;
+            border-bottom: 0.104vw solid #FFF;
+            background-color: $black;
+            color: $white;
+            padding: 2.8vw 0 0 0;
+            text-wrap: wrap;
+
+            &:focus {
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+    }
+
+    .discuss_midle_part {
+        margin: 5.2083vw 0 0 0;
+
+        h2 {
+            margin: 0%;
+            color: $white;
+            display: inline-block;
+        }
+    }
+
+    .discuss_merge_input{
+        display: flex;
+    }
+
+    .discuss_left_part {
+        display: flex;
+        flex-direction: column;
+        input {
+            width: 26.5625vw;
+            height: 5.3125vw;
+            border: none;
+            border-bottom: 0.104vw solid #FFF;
+            background-color: $black;
+            color: $white;
+            padding: 2.3vw 0 0 0;
+
+            &:focus {
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+    }
+
+    .discuss_right_part {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 4vw;
+
+        input {
+            width: 26.5625vw;
+            height: 5.3125vw;
+            border: none;
+            border-bottom: 0.104vw solid #FFF;
+            background-color: $black;
+            color: $white;
+            padding: 2.3vw 0 0 0;
+
+            &:focus {
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+    }
+
+    .discuss_foot_part {
+        margin: 3vw 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            color: $white;
+            width: 57.135vw;
+            height: 5.2604vw;
+            background-color: $cat-blue;
+            border-radius: 1.041vw;
+            border: none;
+
+            &:hover {
+                background-color: $white;
+                color: $black;
+            }
+        }
+    }
+
+    span {
+        margin: 1.145vw 0 0 0;
+        color: $mouse-gray;
+
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+    }
+}
+.anim-arrow {
+    width: 100%; /* Задайте нужную ширину */
+    height: 100%; /* Задайте нужную высоту */
+    margin-left: 10px;
+    // border: 1px solid #ccc; /* Для наглядности */
+    z-index: 10;
+    background-color: transparent;
+    canvas{
+        background-color: transparent;
+    }
+}

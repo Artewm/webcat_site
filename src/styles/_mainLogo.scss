@@ -1,0 +1,133 @@
+@use 'variables' as *;
+
+.logo_wrapper {
+    position: relative;
+}
+
+.logo_main {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    svg {
+        overflow: visible;
+        display: block;
+        z-index: 3;
+    }
+}
+
+#logo_for_anim {
+    width: 91.75vw;
+}
+
+.group_for_anim {
+    position: relative;
+
+    #top_u {
+        transform: translate(31.89%, 61.1%);
+        visibility: hidden;
+    }
+
+    #bottom_u {
+        transform: translate(31.89%, 93.75%);
+        visibility: hidden;
+    }
+
+    #top_e, #midle_e {
+        transform: translate(16%, 0%);
+        visibility: hidden;
+    }
+
+    #bottom_e {
+        transform: translate(16%, 32.7%);
+        visibility: hidden;
+    }
+
+    #right_c {
+        transform: translate(55.55%, 0%);
+        visibility: hidden;
+    }
+
+    #left_c {
+        transform: translate(53.2%, 0%);
+        visibility: hidden;
+    }
+}
+
+.logo_animed {
+    #origin_e, #origin_c, #origin_u {
+        visibility: hidden;
+    }
+
+    #top_e {
+        transform: translate(16%, -5%);
+        visibility: visible;
+        transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+
+        &.active {
+            transform: translate(16%, 0%);
+            transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+        }
+    }
+
+    #midle_e {
+        visibility: visible;
+    }
+
+    #bottom_e {
+        transform: translate(16%, 38%);
+        visibility: visible;
+        transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+
+        &.active {
+            transform: translate(16%, 32.7%);
+            transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+        }
+    }
+
+    #left_c {
+        transform: translate(50.9%, 0%);
+        visibility: visible;
+        transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+
+        &.active {
+            transform: translate(53.2%, 0%);
+            transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+        }
+    }
+
+    #right_c, #top_u {
+        visibility: visible;
+    }
+
+    #bottom_u {
+        transform: translate(31.89%, 99.8%);
+        visibility: visible;
+        transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+
+        &.active {
+            transform: translate(31.89%, 93.75%);
+            transition: transform 1s cubic-bezier(0.78, 0.19, 0.18, 0.75);
+        }
+    }
+
+    #top_e,
+    #bottom_e,
+    #left_c,
+    #bottom_u {
+        cursor: pointer;
+    }
+}
+
+.anim_hand {
+    display: inline-block;
+    z-index: -1;
+    height: 35vw;
+    width: 35vw;
+
+    position: absolute;
+    bottom: -37%;
+    right: 0%;
+    transform: rotate(30deg);
+}
