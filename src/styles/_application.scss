@@ -43,7 +43,11 @@
         text-decoration: none;
     }
 }
-
+@media screen and (max-width: 1280px){
+    .discuss_opened{
+       width: 51.02vw;
+    }
+}
 .discuss_gap {
     display: flex;
     flex-direction: column;

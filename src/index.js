@@ -44,6 +44,36 @@ import py from './textures/py.jpg';
 import pz from './textures/pz.jpg';
 import { rotate } from 'three/tsl';
 
+window.addEventListener('load', function () {
+    let progressElement = document.getElementById('progress');
+    let preloader = document.getElementById('preloader');
+    let spinner = document.querySelector('.spinner');
+    
+    let fakeProgress = 0;
+    const interval = setInterval(() => {
+      fakeProgress += 5;
+      if (fakeProgress <= 90) {
+        progressElement.textContent = `${fakeProgress}%`;
+      } else {
+        clearInterval(interval);
+      }
+    }, 30);
+    
+    // Завершение через load или через 5 секунд
+    function hidePreloader() {
+      console.log('Hiding preloader');
+      clearInterval(interval);
+      progressElement.textContent = '100%';
+      setTimeout(() => {
+        spinner.style.display = 'none';
+        preloader.style.display = 'none';
+      }, 500);
+    }
+    
+    window.addEventListener('load', hidePreloader);
+    setTimeout(hidePreloader, 1500);
+      });
+
 document.addEventListener("DOMContentLoaded", () => {
     const mediaQuery = window.matchMedia("(min-width: 1200px)");
 
@@ -425,7 +455,7 @@ loader.load(
     (gltf) => {
         model = gltf.scene;
         scene.add(model.rotateZ(-0.2).rotateY(-0.2).rotateX(0.5));
-        model.scale.set(3.5, 3.5, 3.5);
+        model.scale.set(3.3, 3.3, 3.3);
     },
     (progress) => console.log(`Загрузка: ${(progress.loaded / progress.total) * 100}%`),
     (error) => console.error('Ошибка загрузки:', error)

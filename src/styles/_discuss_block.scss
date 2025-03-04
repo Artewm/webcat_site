@@ -74,7 +74,7 @@
     .discuss_merge_input{
         display: flex;
     }
-
+    
     .discuss_left_part {
         display: flex;
         flex-direction: column;
@@ -135,7 +135,12 @@
             }
         }
     }
-
+    @media screen and (max-width: 1280px){
+        .discuss_foot_part{
+            margin-top: 6.44vw;
+            margin-bottom: 7.44vw;
+        }
+    }
     span {
         margin: 1.145vw 0 0 0;
         color: $mouse-gray;
@@ -144,6 +149,9 @@
             text-decoration: none;
             color: $white;
         }
+    }
+    .accept-processing{
+        padding-left: 0.4vw;
     }
 }
 .anim-arrow {
@@ -156,4 +164,7 @@
     canvas{
         background-color: transparent;
     }
+}
+.discuss_foot__item{
+    width: 20.21vw;
 }

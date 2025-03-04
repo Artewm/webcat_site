@@ -2,8 +2,62 @@
     <head>
         <title>Верстка</title>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+        <style>
+        
+            #preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 99999999;
+                transition: opacity 0.5s ease;
+            }
+            
+            #preloader.hidden {
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            .spinner {
+                width: 2.60vw;
+                height: 2.60vw;
+                border: 5px solid #fff;
+                border-top: 5px solid #1758FF;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin-bottom: 20px;
+            }
+            
+            #progress {
+                color: #000;
+                text-align: right;
+                font-family: "FactorA-Regular";
+                font-size: 13.33vw;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                position: absolute;
+                left: 5%;
+                bottom: 5%;
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
     </head>
     <body>
+        <div id="preloader">
+            <div class="spinner"></div>
+            <div id="progress">0%</div>
+        </div>
         <div id="heder_wrapper">
             <header id="menu">
                 <div class="flexheader">
@@ -154,7 +208,9 @@
                                 </label>
                             </div>
                             <div class="discuss_foot">
-                                <span>Нажимая кнопку, вы подтверждаете свое согласие<br> <a href="#asd">на обработку персональных данных</a></span>
+                               <div class="discuss_foot__item">
+                                <span>Нажимая кнопку, вы подтверждаете свое согласие <a href="#asd">на обработку персональных данных</a></span>
+                                </div> 
                                 <button class="upload_btn">Отправить</button>
                             </div>
                         </div>
@@ -436,7 +492,7 @@
                             </video>
                         </div>
                         <div>
-                            <div id="case_picture" class="case_small">
+                            <div id="case_picture" class="case_small" style="background-color: #F44E11;">
                                 <img src="pic">
                             </div>
                             <div id="case_picture" class="case_small">
@@ -654,7 +710,7 @@
                     </div>
                     <div class="discuss_foot_part">
                         <button>Отправить заявку</button>
-                        <span>Нажимая кнопку, вы подтверждаете <a href="#asd1">свое согласие на обработку персональных данных</a></span>
+                        <span>Нажимая кнопку, вы подтверждаете <a href="#asd1" class="accept-processing">свое согласие на обработку персональных данных</a></span>
                     </div>
                 </form>
             </section>
