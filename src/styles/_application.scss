@@ -30,7 +30,7 @@
     height: 96.4814vh;
     margin: 0%;
 
-    border-radius: 3.7037vh 0px 0px 3.7037vh;
+    border-radius: 0px 0px 3.7037vh 3.7037vh;
     background-color: $warm-white;
 
     z-index: 2;
@@ -43,11 +43,7 @@
         text-decoration: none;
     }
 }
-@media screen and (max-width: 1280px){
-    .discuss_opened{
-       width: 51.02vw;
-    }
-}
+
 .discuss_gap {
     display: flex;
     flex-direction: column;
@@ -171,4 +167,56 @@
         background-color: $black;
     }
 }
+@media screen and (max-width: 1280px){
+    .discuss_opened{
+       width: 51.02vw;
+    }
+}
+@media screen and (max-width: 834px){
+    
+    input{
+        &::placeholder{
+            font-size: 1.918vw !important;
+        }
+    }
+    .input_file--text{
+        font-size: 1.918vw !important;
+    }
+    .discuss_opened{
+        width: 100vw;
+        height: auto;
+        position: absolute;
+        top: 0;
+        padding-bottom: 30px;
+    }
+    .discuss_wrapper_inside{
+        height: 100%;
+    }
+    .discuss_head{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    #discuss_exit{
+        width: 2.998vw;
+        height: 2.998vw;
+        align-self: end;
+    }
+    .discuss_gap{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .discuss_gap__row{
+        display: flex;
+        flex-direction: column;
+    }
+    .discuss_foot{
+        width: 100%;
+    }
+    .discuss_foot__item{
+        width: 46.523vw !important;
+    }
+    .upload_btn{
+        padding: 1.199vw 2.398vw 1.199vw 2.398vw;
+    }
 
+}

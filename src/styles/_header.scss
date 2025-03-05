@@ -303,3 +303,12 @@ header.hide {
         }
     }
 }
+//phone_number
+@media screen and (max-width: 834px){
+    .phone_number{
+        display: none;
+    }
+    .toolbar{
+        gap: 13.77vw;
+    }
+}
