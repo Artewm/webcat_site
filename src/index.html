@@ -52,6 +52,8 @@
                 100% { transform: rotate(360deg); }
             }
         </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
     </head>
     <body>
         <div id="preloader">
@@ -272,6 +274,136 @@
                     </svg>
                 </div>
                 <div id="anim_hand" class="anim_hand"></div>
+                <div class="container_word" id="wordContainer">
+                    <!-- Первая строка (6 букв) -->
+                     <div class="container_word_row">
+            
+                     
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 116" fill="none">
+                            <path d="M0 115.303V0.742676H18.166V71.6066L57.2803 32.3287L96.5583 71.6066V0.742676H114.561V115.303L57.2803 57.8593L0 115.303Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 116" fill="none">
+                            <path d="M0 115.303V0.742676H18.166V71.6066L57.2803 32.3287L96.5583 71.6066V0.742676H114.561V115.303L57.2803 57.8593L0 115.303Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 115" fill="none">
+                            <path d="M0.810547 114.561V0H115.699V18.0024H18.9766V48.2791H115.699V66.2815H18.9766V96.3946H115.699V114.561H0.810547Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 115" fill="none">
+                            <path d="M0.810547 114.561V0H115.699V18.0024H18.9766V48.2791H115.699V66.2815H18.9766V96.3946H115.699V114.561H0.810547Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 115 115" fill="none">
+                            <path d="M0 114.561V0H96.3946L114.561 18.0024V39.1143L96.3946 57.2803L114.561 75.2827V96.3946L96.5583 114.561H0ZM96.3946 96.3946V66.2815H18.1661V96.3946H96.3946ZM96.3946 48.2791V18.0024H18.1661V48.2791H96.3946Z" fill="#0B0B0B"/>
+                          </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 115 115" fill="none">
+                            <path d="M0 114.561V0H96.3946L114.561 18.0024V39.1143L96.3946 57.2803L114.561 75.2827V96.3946L96.5583 114.561H0ZM96.3946 96.3946V66.2815H18.1661V96.3946H96.3946ZM96.3946 48.2791V18.0024H18.1661V48.2791H96.3946Z" fill="#0B0B0B"/>
+                          </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0.0957031 18.0761L18.2617 0.0737305H114.656V18.0761H18.2617V96.4683H114.656V114.634H18.2617L0.0957031 96.4683V18.0761Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0.0957031 18.0761L18.2617 0.0737305H114.656V18.0761H18.2617V96.4683H114.656V114.634H18.2617L0.0957031 96.4683V18.0761Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0.439453 18.4038L18.4418 0.401367H97.1614L115 18.2401V114.962H96.834V66.6829H18.6055V114.962H0.439453V18.4038ZM18.6055 18.4038V48.6805H96.834V18.4038H18.6055Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0.439453 18.4038L18.4418 0.401367H97.1614L115 18.2401V114.962H96.834V66.6829H18.6055V114.962H0.439453V18.4038ZM18.6055 18.4038V48.6805H96.834V18.4038H18.6055Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0 18.0024V0H114.561V18.0024H66.2815V114.561H48.2791V18.0024H0Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0 18.0024V0H114.561V18.0024H66.2815V114.561H48.2791V18.0024H0Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                </div>
+                    <!-- Вторая строка (6 букв) -->
+                     <div class="container_word_row">
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 115" fill="none">
+                            <path d="M0.868164 114.983V96.817H97.4264V66.7039H18.8706L0.868164 48.8652V18.4248L18.8706 0.422363H115.429V18.4248H19.0342V48.7015H97.5901L115.429 66.5402V96.9806L97.4264 114.983H0.868164Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 115" fill="none">
+                            <path d="M0.868164 114.983V96.817H97.4264V66.7039H18.8706L0.868164 48.8652V18.4248L18.8706 0.422363H115.429V18.4248H19.0342V48.7015H97.5901L115.429 66.5402V96.9806L97.4264 114.983H0.868164Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0 18.0024V0H114.561V18.0024H66.2815V114.561H48.2791V18.0024H0Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M0 18.0024V0H114.561V18.0024H66.2815V114.561H48.2791V18.0024H0Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M18.1661 0.111816V96.5064H96.2309V0.111816H114.397V96.8337L96.2309 114.672H18.1661L0 96.5064V0.111816H18.1661Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" fill="none">
+                            <path d="M18.1661 0.111816V96.5064H96.2309V0.111816H114.397V96.8337L96.2309 114.672H18.1661L0 96.5064V0.111816H18.1661Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 116" fill="none">
+                            <path d="M97.319 0.780762L115.321 18.7832V97.1754L97.319 115.341H0.760742V0.780762H97.319ZM18.9268 97.1754H97.319V18.7832H18.9268V97.1754Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="letter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 116" fill="none">
+                            <path d="M97.319 0.780762L115.321 18.7832V97.1754L97.319 115.341H0.760742V0.780762H97.319ZM18.9268 97.1754H97.319V18.7832H18.9268V97.1754Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class="shadow shadow-i">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 19 115" fill="none">
+                            <path d="M0 0H18.166V114.561H0V0Z" fill="#0B0B0B"/>
+                          </svg>
+                    </div>
+                    <div class="letter letter-i">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 19 115" fill="none">
+                            <path d="M0 0H18.166V114.561H0V0Z" fill="#0B0B0B"/>
+                          </svg>
+                    </div>
+                    <div class="shadow shadow-o">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 116" fill="none">
+                            <path d="M96.9957 0.703613L114.998 18.706V97.2619L96.9957 115.264H18.4399L0.4375 97.0982V18.706L18.4399 0.703613H96.9957ZM18.6035 97.0982H96.9957V18.706H18.6035V97.0982Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                    <div class=" letter letter-o">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 116" fill="none">
+                            <path d="M96.9957 0.703613L114.998 18.706V97.2619L96.9957 115.264H18.4399L0.4375 97.0982V18.706L18.4399 0.703613H96.9957ZM18.6035 97.0982H96.9957V18.706H18.6035V97.0982Z" fill="#0B0B0B"/>
+                        </svg>
+                    </div>
+                </div>
+                </div>
             </section>
             <section class="info_about_us">
                 <div>

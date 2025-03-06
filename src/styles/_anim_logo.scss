@@ -1,0 +1,51 @@
+@media screen and (min-width: 834px){
+    .anim_word_container{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 834px){
+    
+    .container_word {
+        position: relative;
+        //padding-top: 17vh;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 90vw;
+        height: 81.71875vh;
+      
+        overflow: hidden;
+    }
+    .letter, .shadow {
+        position: absolute;
+        width: calc(90vw / 6 - 20px); /* Ширина для 6 букв в строке с учётом gap */
+        height: auto; /* Высота определяется пропорциями SVG */
+        pointer-events: none;
+        padding-top: 17vh;
+    }
+    .letter {
+        pointer-events: all;
+        z-index: 10;
+    }
+    .shadow {
+        opacity: 0.2;
+        z-index: 1;
+    }
+    svg {
+        display: block;
+        width: 100%; /* SVG занимает всю ширину родителя */
+        height: auto; /* Высота определяется пропорциями SVG */
+    }
+
+    .letter-i, .shadow-i {
+        width: 2.1vw; /* Уменьшаем ширину "I" в два раза */
+    }
+   .container_word_row{
+    display: flex;
+   }
+   .letter-o, .shadow-o{
+    margin-left: -10vw;
+   }
+    
+}

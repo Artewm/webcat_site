@@ -131,3 +131,11 @@
     right: 0%;
     transform: rotate(30deg);
 }
+@media screen and (max-width: 834px){
+    .logo_wrapper{
+        display: none;
+    }
+    .anim_hand{
+        display: none !important;
+    }
+}

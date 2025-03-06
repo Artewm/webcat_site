@@ -498,5 +498,102 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
 });
-   
+
+// Получаем элементы DOM один раз при загрузке
+const containerWords = document.getElementById("wordContainer");
+const letters = document.querySelectorAll('.letter');
+const shadows = document.querySelectorAll('.shadow');
+const draggables = []; // Массив для хранения экземпляров Draggable
+const LETTERS_PER_ROW = 6; // Константа: количество букв в строке
+const SVG_ASPECT_RATIO = 116 / 115; // Соотношение сторон SVG (высота/ширина)
+
+// Функция для расчёта начальных координат буквы
+function getInitialPosition(index, letterWidth, letterHeight) {
+    const row = Math.floor(index / LETTERS_PER_ROW); // Номер строки (0 или 1)
+    const col = index % LETTERS_PER_ROW; // Позиция в строке (0-5)
+    return {
+        x: col * letterWidth, // Горизонтальная позиция без дополнительного отступа
+        y: row * (letterHeight + 20) // Вертикальная позиция с отступом 20px между строками
+    };
+}
+
+// Функция для обновления позиций и границ всех букв
+function updatePositionsAndBounds() {
+    const containerWordsWidth = containerWords.offsetWidth; // Текущая ширина контейнера
+    const containerWordsHeight = containerWords.offsetHeight; // Текущая высота контейнера
+    const letterWidth = containerWordsWidth / LETTERS_PER_ROW; // Ширина одной буквы
+    const letterHeight = letterWidth * SVG_ASPECT_RATIO; // Высота с учётом пропорций SVG
+
+    letters.forEach((letter, index) => {
+        const shadow = shadows[index]; // Соответствующая тень для буквы
+        const { x: initialX, y: initialY } = getInitialPosition(index, letterWidth, letterHeight);
+
+        // Ограничиваем случайное смещение в пределах контейнера
+        const maxOffsetX = containerWordsWidth - initialX - letterWidth;
+        const maxOffsetY = containerWordsHeight - initialY - letterHeight;
+        const randomX = Math.min(Math.max(Math.random() * 250 - 100, -initialX), maxOffsetX);
+        const randomY = Math.min(Math.max(Math.random() * 300 - 50, -initialY), maxOffsetY);
+
+        // Устанавливаем начальные позиции для тени и буквы
+        gsap.set(shadow, { x: initialX, y: initialY });
+        gsap.set(letter, { x: initialX, y: initialY });
+
+        // Анимируем случайное смещение буквы
+        gsap.to(letter, {
+            x: "+=" + randomX,
+            y: "+=" + randomY,
+            duration: 1,
+            ease: "power1.out"
+        });
+
+        // Обновляем границы для существующего Draggable
+        if (draggables[index]) {
+            draggables[index].applyBounds(containerWords);
+        }
+    });
+}
+
+// Инициализация Draggable для каждой буквы
+letters.forEach((letter, index) => {
+    const shadow = shadows[index];
+    const letterWidth = containerWords.offsetWidth / LETTERS_PER_ROW; // Начальная ширина буквы
+    const letterHeight = letterWidth * SVG_ASPECT_RATIO; // Начальная высота буквы
+    const { x: initialX, y: initialY } = getInitialPosition(index, letterWidth, letterHeight);
+
+    const draggable = Draggable.create(letter, {
+        bounds: containerWords, // Ограничиваем перемещение контейнером
+        onDrag() {
+            // Затемнение тени при перетаскивании
+            gsap.to(shadow, { opacity: 0.1, duration: 0.2 });
+        },
+        onRelease() {
+            // Проверяем расстояние между буквой и тенью
+            const letterBounds = letter.getBoundingClientRect();
+            const shadowBounds = shadow.getBoundingClientRect();
+            const distance = Math.hypot(letterBounds.x - shadowBounds.x, letterBounds.y - shadowBounds.y);
+
+            // Если буква близко к тени, возвращаем её на место
+            if (distance < 30) {
+                gsap.to(letter, {
+                    x: initialX,
+                    y: initialY,
+                    duration: 0.5,
+                    ease: "elastic.out(1, 0.5)"
+                });
+                gsap.to(shadow, { opacity: 0.2, duration: 0.5 });
+            }
+        }
+    })[0]; // Создаём Draggable и берём первый экземпляр
+
+    draggables.push(draggable); // Сохраняем экземпляр в массив
+});
+
+// Инициализация позиций при загрузке страницы
+updatePositionsAndBounds();
+
+// Таймер для обновления позиций каждые 3 секунды
+setTimeout(updatePositionsAndBounds, 2500);
+
+// Обновление позиций при изменении размера окна
+window.addEventListener('resize', updatePositionsAndBounds);
 });
