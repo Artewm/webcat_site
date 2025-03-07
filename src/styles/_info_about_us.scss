@@ -280,3 +280,65 @@
         }
     }
 }
+@media screen and (max-width: 834px){
+    .info_about_us{
+        height: auto;
+    }
+    .info_btn{
+        left: 2.25vw;
+        top: 2.25vw !important;
+        background-color: transparent !important;
+        svg{
+            path{
+                fill: white;
+            }
+        }
+    }
+    .content_in_block{
+        padding-top: 4.918vw;
+        height: auto;
+        padding-bottom: 2.25vw;
+        h2{
+            font-family: 'FactorA-Regular' !important;
+            font-size: 2.041vw !important;
+            margin: 0 0 2.1979vw 0 !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.4px;
+        }
+        p{
+            font-family: 'FactorA-Light' !important;
+            font-weight: 400;
+            line-height: 1.9vw;
+            letter-spacing: 0.5px;
+        }
+    }
+    #white_block{
+        .info_btn{
+            svg{
+                path{
+                    fill: black;
+                }
+            }
+        }
+    }
+    .info_block{
+        height: auto !important;
+    }
+    .btn_about_company{
+        width: 28.372vw;
+        padding: 0 0 0;
+        height: 5vw;
+        letter-spacing: 0.4px;  
+        border-radius: 2.4833vw 4.0833vw 0px 2.4833vw !important;
+        letter-spacing: 0.4px;
+        margin-top: 1vh;
+    }
+    .description_info{
+        height: auto !important;
+    }
+    .more_info_btn{
+        border-radius: 2.0833vw 3.5833vw 0px 2.0833vw !important;
+        padding: 0.7166vw 5.0208vw !important;
+        letter-spacing: 0.5px;
+    }
+}

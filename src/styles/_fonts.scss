@@ -17,6 +17,14 @@
 }
 
 @font-face {
+    font-family: 'FactorA-Light';
+    src: url('/src/fonts/FactorALight-Regular.ttf') format('truetype');
+
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'FactorA-Medium';
     src: url('/src/fonts/FactorA-Medium.otf') format('opentype');
 

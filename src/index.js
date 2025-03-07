@@ -72,6 +72,7 @@ window.addEventListener('load', function () {
     
     window.addEventListener('load', hidePreloader);
     setTimeout(hidePreloader, 1500);
+    
       });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -453,9 +454,13 @@ const loader = new GLTFLoader();
 loader.load(
     modelArrowPath, // Путь к вашему файлу
     (gltf) => {
-        model = gltf.scene;
+        model = gltf.scene;        
         scene.add(model.rotateZ(-0.2).rotateY(-0.2).rotateX(0.5));
-        model.scale.set(3.3, 3.3, 3.3);
+        if(document.documentElement.clientWidth > 834) {
+            model.scale.set(3.3, 3.3, 3.3);
+        }
+        else
+            model.scale.set(2.5, 2.5, 2.5);
     },
     (progress) => console.log(`Загрузка: ${(progress.loaded / progress.total) * 100}%`),
     (error) => console.error('Ошибка загрузки:', error)
@@ -527,22 +532,35 @@ function updatePositionsAndBounds() {
     letters.forEach((letter, index) => {
         const shadow = shadows[index]; // Соответствующая тень для буквы
         const { x: initialX, y: initialY } = getInitialPosition(index, letterWidth, letterHeight);
+        const row = Math.floor(index / LETTERS_PER_ROW); // Номер строки (0 или 1)
 
-        // Ограничиваем случайное смещение в пределах контейнера
+        // Ограничиваем смещение в пределах контейнера
         const maxOffsetX = containerWordsWidth - initialX - letterWidth;
         const maxOffsetY = containerWordsHeight - initialY - letterHeight;
-        const randomX = Math.min(Math.max(Math.random() * 250 - 100, -initialX), maxOffsetX);
-        const randomY = Math.min(Math.max(Math.random() * 300 - 50, -initialY), maxOffsetY);
+
+        // Определяем направление смещения в зависимости от строки
+        let randomX, randomY;
+        const horizontalOffset = Math.random() * 100 - 50; // Смещение влево/вправо (-50 до 50)
+
+        if (row === 0) {
+            // Верхняя строка: движение вверх, увеличенное в 1.5 раза
+            randomY = Math.min(Math.max(Math.random() * (-150) -initialY)); // От -225 до -75
+            randomX = Math.min(Math.max(horizontalOffset, -initialX), maxOffsetX); // Ограничение по X
+        } else {
+            // Нижняя строка: движение вниз
+            randomY = Math.min(Math.max(Math.random() * 150, 50), maxOffsetY); // От 50 до 150
+            randomX = Math.min(Math.max(horizontalOffset, -initialX), maxOffsetX); // Ограничение по X
+        }
 
         // Устанавливаем начальные позиции для тени и буквы
         gsap.set(shadow, { x: initialX, y: initialY });
         gsap.set(letter, { x: initialX, y: initialY });
 
-        // Анимируем случайное смещение буквы
+        // Анимируем смещение буквы
         gsap.to(letter, {
             x: "+=" + randomX,
             y: "+=" + randomY,
-            duration: 1,
+            duration: 2.3,
             ease: "power1.out"
         });
 
@@ -564,7 +582,7 @@ letters.forEach((letter, index) => {
         bounds: containerWords, // Ограничиваем перемещение контейнером
         onDrag() {
             // Затемнение тени при перетаскивании
-            gsap.to(shadow, { opacity: 0.1, duration: 0.2 });
+            gsap.to(shadow, { opacity: 0.3, duration: 0.2 });
         },
         onRelease() {
             // Проверяем расстояние между буквой и тенью
@@ -573,12 +591,12 @@ letters.forEach((letter, index) => {
             const distance = Math.hypot(letterBounds.x - shadowBounds.x, letterBounds.y - shadowBounds.y);
 
             // Если буква близко к тени, возвращаем её на место
-            if (distance < 30) {
+            if (distance < 50) {
                 gsap.to(letter, {
                     x: initialX,
                     y: initialY,
                     duration: 0.5,
-                    ease: "elastic.out(1, 0.5)"
+                    ease: "elastic.out(0.5, 1.5)"
                 });
                 gsap.to(shadow, { opacity: 0.2, duration: 0.5 });
             }
@@ -589,11 +607,13 @@ letters.forEach((letter, index) => {
 });
 
 // Инициализация позиций при загрузке страницы
-updatePositionsAndBounds();
-
-// Таймер для обновления позиций каждые 3 секунды
-setTimeout(updatePositionsAndBounds, 2500);
+//updatePositionsAndBounds();
 
 // Обновление позиций при изменении размера окна
 window.addEventListener('resize', updatePositionsAndBounds);
+
+//// Таймер для обновления позиций каждые 3 секунды
+setTimeout(updatePositionsAndBounds, 2000);
+
+
 });
