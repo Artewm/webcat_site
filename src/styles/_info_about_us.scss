@@ -283,6 +283,7 @@
 @media screen and (max-width: 834px){
     .info_about_us{
         height: auto;
+        //width: 46.0625vw;
     }
     .info_btn{
         left: 2.25vw;
@@ -323,6 +324,7 @@
     }
     .info_block{
         height: auto !important;
+        width: 46.0625vw !important;
     }
     .btn_about_company{
         width: 28.372vw;
@@ -340,5 +342,15 @@
         border-radius: 2.0833vw 3.5833vw 0px 2.0833vw !important;
         padding: 0.7166vw 5.0208vw !important;
         letter-spacing: 0.5px;
+    }
+    
+    #blue_block{
+        .info_btn{
+            svg{
+                path{
+                    fill: white !important;
+                }
+            }
+        }
     }
 }

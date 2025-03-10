@@ -302,6 +302,9 @@ header.hide {
             clip-path: circle(2.8645vw at var(--cursor-x1) var(--cursor-y1));
         }
     }
+    #insta, #tg{
+        fill: white;
+    }
 }
 //phone_number
 @media screen and (max-width: 834px){

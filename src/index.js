@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
     
     // Завершение через load или через 5 секунд
     function hidePreloader() {
-      console.log('Hiding preloader');
+      //console.log('Hiding preloader');
       clearInterval(interval);
       progressElement.textContent = '100%';
       setTimeout(() => {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             application();
             logo_anim()
         } else {
-            console.log("Разрешение меньше 1200 пикселей")
+           // console.log("Разрешение меньше 1200 пикселей")
             initCursorEffect();
             menuInner();
             application();
@@ -234,7 +234,7 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
     // Обработка всех элементов с классом .hover1
     hoverBlock1.forEach(function (block) {
         block.addEventListener("mouseenter", function () {
-            console.log('Мышь наведена на кнопку .hover1');
+           // console.log('Мышь наведена на кнопку .hover1');
             waveLeft.style.animation = "wave-left 2s  ";
             waveRight.style.animation = "wave-right 2s ";
             waveLeft.style.backgroundColor = "#1758FF";
@@ -252,7 +252,7 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
         });
 
         block.addEventListener("mouseleave", function () {
-            console.log('Мышь убрана с кнопки .hover1');
+            // console.log('Мышь убрана с кнопки .hover1');
             waveLeft.style.animation = ""; // Возвращаем исходную анимацию из CSS
             waveRight.style.animation = "";
             waveLeft.style.backgroundColor = "transparent";
@@ -263,7 +263,7 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
     // Обработка всех элементов с классом .hover2
     hoverBlock2.forEach(function (block) {
         block.addEventListener("mouseenter", function () {
-            console.log('Мышь наведена на кнопку .hover2');
+            // console.log('Мышь наведена на кнопку .hover2');
             waveLeft2.style.animation = "wave-left 2s  ";
             waveRight2.style.animation = "wave-right 2s ";
              waveLeft2.style.backgroundColor = "#1758FF";
@@ -281,7 +281,7 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
         });
 
         block.addEventListener("mouseleave", function () {
-            console.log('Мышь убрана с кнопки .hover2');
+            // console.log('Мышь убрана с кнопки .hover2');
             waveLeft2.style.animation = ""; // Возвращаем исходную анимацию из CSS
             waveRight2.style.animation = "";
             waveLeft2.style.backgroundColor = "transparent";
@@ -297,7 +297,7 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
 
         const elements = document.querySelectorAll(".group_for_anim g"); // находим все кнопки
         elements.forEach((element) => { // проходимся циклом по массиву кнопок которые мы нашли
-            console.log(element)
+            // console.log(element)
             element.addEventListener("click", () => { 
                 element.classList.toggle("active"); 
             })
@@ -308,11 +308,15 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
         const discuss_btn = document.querySelector('#discuss_btn');
         const discuss_overlay = document.querySelector('.discuss_overlay');
         const discuss_exit = document.querySelector('#discuss_exit');
+        const icoInst = document.getElementById('insta');
+        const icoTg = document.getElementById('tg');
 
         discuss_btn.addEventListener("click", () => {
             if (menu.classList.contains('menu_opened')) {
                 menu_btn.dispatchEvent(new Event('click'));
                 discuss_overlay.classList.add('active');
+                icoInst.style.fill(white);
+                icoTg.style.fill(white);
             } else {
                 discuss_overlay.classList.add('active');
             }
@@ -538,28 +542,31 @@ function updatePositionsAndBounds() {
         const maxOffsetX = containerWordsWidth - initialX - letterWidth;
         const maxOffsetY = containerWordsHeight - initialY - letterHeight;
 
-        // Определяем направление смещения в зависимости от строки
-        let randomX, randomY;
-        const horizontalOffset = Math.random() * 100 - 50; // Смещение влево/вправо (-50 до 50)
+        const targetTranslations = [
+            { x: 0, y: -112 },      // W
+            { x: 6.475, y: -180 },     // E    295.789 - 174.956
+            { x: 5.995, y: -53 },      // B    531.746 - 290.079
+            { x: 16.307, y: -147 },    // C    828 - 466
+            { x: 16.787, y: -180 },    // A
+            { x: -2.278, y: 91 },      // T
+            { x: 2.638, y: -80 },      // S
+            { x: 11.99, y: 40 },      // T
+            { x: -23.861, y: 145 },    // U
+            { x: 5.995, y: 165 },      // D
+            { x: -1.199, y: -127 },    // I
+            { x: 9.592, y: 120 }       // O
+        ];
 
-        if (row === 0) {
-            // Верхняя строка: движение вверх, увеличенное в 1.5 раза
-            randomY = Math.min(Math.max(Math.random() * (-150) -initialY)); // От -225 до -75
-            randomX = Math.min(Math.max(horizontalOffset, -initialX), maxOffsetX); // Ограничение по X
-        } else {
-            // Нижняя строка: движение вниз
-            randomY = Math.min(Math.max(Math.random() * 150, 50), maxOffsetY); // От 50 до 150
-            randomX = Math.min(Math.max(horizontalOffset, -initialX), maxOffsetX); // Ограничение по X
-        }
-
+        const targetX = targetTranslations[index].x + 'vw'; 
+        const targetY = targetTranslations[index].y;
         // Устанавливаем начальные позиции для тени и буквы
         gsap.set(shadow, { x: initialX, y: initialY });
         gsap.set(letter, { x: initialX, y: initialY });
 
         // Анимируем смещение буквы
         gsap.to(letter, {
-            x: "+=" + randomX,
-            y: "+=" + randomY,
+            x: "+=" + targetX,
+            y: "+=" + targetY,
             duration: 2.3,
             ease: "power1.out"
         });
@@ -614,6 +621,5 @@ window.addEventListener('resize', updatePositionsAndBounds);
 
 //// Таймер для обновления позиций каждые 3 секунды
 setTimeout(updatePositionsAndBounds, 2000);
-
 
 });
