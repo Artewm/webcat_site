@@ -51,6 +51,15 @@
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
             }
+            @media screen and (max-width: 430px){
+                #progress{
+                    align-self: center;
+                    position: relative;
+                }
+                .spinner{
+                    display: none;
+                }
+            }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
@@ -408,9 +417,11 @@
                         <h1>
                             Digital-продакшн <span>полного цикла, с собственной<br> продуктовой аналитикой, дизайном,<br> веб и мобильной разработкой.</span>
                         </h1>
-                        <button class="btn_about_company black_btn">О Компании</button>
+                        <button class="btn_about_company black_btn">О компании</button>
                     </div>
-                    <div class="info_blocks">
+                    
+                    <div class="info_blocks info_blocks_mb">
+                        <h2 class="info_blocks_title__mb">Услуги</h2>
                         <div id="blue_block" class="info_block hover1">
                             <button id="white_btn_info" class="info_btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 46" fill="none">

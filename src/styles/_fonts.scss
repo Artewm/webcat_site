@@ -254,3 +254,10 @@ nav a {
     font-size: 1.875vw;
     font-weight: normal;
 }
+@media screen and (max-width: 430px){
+    .btn_about_company{
+        font-family: "FactorA-Light"!important;
+        font-size: 3.30416vw !important;
+        font-weight: 400;
+    }
+}

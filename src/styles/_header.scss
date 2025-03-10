@@ -315,3 +315,88 @@ header.hide {
         gap: 13.77vw;
     }
 }
+
+@media screen and (max-width: 430px){
+    .logoHead {
+        svg {
+            width: 5.02vw;
+        }
+    }
+    .toolbar{
+        .socialMedia{
+            display: none;
+        }
+        
+        .menu_btn{
+            gap: 1.573vw;
+            p{
+                font-size: 3.245vw;
+            }
+            .create-line::before {
+                content: "";
+                background: #1758FF;
+                width: 3.34375vw;
+                height: 0.1041vw;
+                top: 2.041vw;
+                position: absolute;
+            }
+        }
+        .menu_exit{
+            .phone_number{
+                display: none;
+            }
+            .discuss_btn{
+                display: none !important;
+            }
+            svg{
+                width: 7.541vw;
+                path{
+                    fill: white !important;
+                }
+            }
+        }
+    }
+    .menu_opened{
+        height: 100vh !important;
+        background-color: black !important;
+        nav{
+            align-self: flex-start;
+            position: absolute;
+            top: 15%;
+            left: 5%;
+            ul{
+                li{
+                    justify-content: flex-start !important;
+                    a{
+                        font-size: 8vw;
+                        line-height: 8vh;
+                    }
+                }
+            }
+        }
+        .phone_number{
+            display: block;
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            font-size: 3vw;
+            font-family: "FactorA-Light"!important;
+        }
+        .discuss_btn{
+            //display: block !important;
+            position: absolute;
+            top: 55%;
+            left: 10%;
+            p{
+                font-size: 4vw !important;
+                font-family: "FactorA-Light"!important;
+            }
+            svg{
+                position: absolute;
+                left: -15%;
+                width: 3.666vw;
+                top: -40%;
+            }
+        }
+    }
+}

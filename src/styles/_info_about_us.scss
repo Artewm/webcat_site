@@ -1,5 +1,8 @@
 @use 'variables' as *;
 
+.info_blocks_title__mb{
+    display: none;
+}
 .info_about_us {
     margin: 11.979vw 0 0 0;
     display: flex;
@@ -352,5 +355,92 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 430px){
+
+    .description_info{
+        h1{
+            align-self: center;
+            font-size: 4.00416vw !important;
+            span{
+                font-size: 4.00416vw !important;
+            }
+        }
+        .btn_about_company{
+            height: 6.958vw !important;
+            width: 30.372vw;
+            border-radius: 4.4833vw 8.0833vw 0px 4.4833vw !important;       
+            margin-top: 30px;
+        }
+        
+    }
+    .info_blocks_title__mb{
+        display: inline-block;
+        font-family: 'JxTabeDemoRegular' !important;
+        color: $warm-white;
+        padding: 6.279vw 11.628vw 0.326vw 0;
+        font-size: 5.233vw !important;
+    }
+    .info_blocks_mb{
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        background-color: $cat-blue;
+        padding: 10px 16px 30px 16px;;
+        border-radius: 4.651vw 4.651vw 0px 0px;
+        .info_block{
+            width: 100% !important;
+            background-color: $warm-white !important;
+            color: black !important;
+            border-radius: 4.651vw;
+            padding: 3.479vw 3.9854vw;
+            
+            #white_btn_info{
+                    svg{
+                    path{
+                        fill: black !important;
+                    }
+                }
+            }
+            .info_btn{
+                width: auto;
+                height: auto;
+                margin: 10px 0;
+                svg{
+                    width: auto;
+                    height: 5.3vw;
+                }
+            }
+            .content_in_block{
+                width: auto;
+                padding-top: 7.918vw;
+                h2{
+                    font-size: 4vw !important;
+                    margin: 20px 0px !important;
+                    font-family: "FactorA-Medium";
+                }
+                p{
+                    font-size: 3vw !important;
+                    line-height: normal;
+                    width: auto;
+                }
+            }
+            .more_info_btn{
+                background-color: $warm-white;
+                color: black;
+                font-family: "FactorA-Light";
+                font-size: 3.6041vw;
+                width: 38vw;
+                height: 34px;
+                border-radius: 4.0833vw 8.0833vw 0px 4.0833vw !important;
+            }
+        }
+    }
+    .info_block:last-child{
+        background-color: transparent !important;
+        height: 50px !important;
     }
 }
