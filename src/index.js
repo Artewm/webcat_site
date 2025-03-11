@@ -303,7 +303,9 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
             })
         })
     }
-
+    if(document.documentElement.clientWidth <= 430) {
+        discuss_btn.style.display = "none";
+    }
     function application() {
         const discuss_btn = document.querySelector('#discuss_btn');
         const discuss_overlay = document.querySelector('.discuss_overlay');
@@ -311,22 +313,25 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
         const icoInst = document.getElementById('insta');
         const icoTg = document.getElementById('tg');
 
+      
+
         discuss_btn.addEventListener("click", () => {
             if (menu.classList.contains('menu_opened')) {
                 menu_btn.dispatchEvent(new Event('click'));
                 discuss_overlay.classList.add('active');
-                icoInst.style.fill(white);
-                icoTg.style.fill(white);
+                icoInst.style.fill = "white";
+                icoTg.style.fill = "white";
             } else {
                 discuss_overlay.classList.add('active');
+                
             }
         });
 
         discuss_exit.addEventListener("click", () => {
             discuss_overlay.classList.remove('active');
         });
-
     }   
+    
 
     function menuInner() {
         const menu_btn = document.querySelector('#menu_btn');
@@ -342,10 +347,16 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
                 menu_btn.classList.remove('menu_btn');
                 menu_btn.classList.add('menu_exit');
                 menu_wrapper.classList.add('heder_wrapper');
+                if(document.documentElement.clientWidth <= 430) {
+                    discuss_btn.style.display = "block";
+            }
             } else {
                 menu_btn.classList.add('menu_btn');
                 menu_btn.classList.remove('menu_exit');
                 menu_wrapper.classList.remove('heder_wrapper');
+                if(document.documentElement.clientWidth <= 430) {
+                    discuss_btn.style.display = "none";
+                }
             }
 
             menu.classList.toggle('menu_opened')
@@ -621,5 +632,7 @@ window.addEventListener('resize', updatePositionsAndBounds);
 
 //// Таймер для обновления позиций каждые 3 секунды
 setTimeout(updatePositionsAndBounds, 2000);
+    
+    
 
 });

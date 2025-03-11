@@ -61,3 +61,36 @@
         }
     }
 }
+@media screen and (max-width: 430px){
+    .workers_block{
+        height: auto;
+        padding-bottom: 10%;
+        h2 {
+            display: inline-block;
+            width: 90% !important;
+            height: auto;
+            font-size: 4.6041vw;
+            margin: 5.1562vw 0 3vw 4.1666vw;
+            line-height: 26px;
+            span{
+                line-height: 20px;
+                font-size: 3.6041vw;
+            }
+        }
+    } 
+    .workers_corousel{
+        height: auto !important;
+    }
+    .worker_card {
+        width: 23.552vw;
+        h2{
+            font-size: 2vw !important;
+            line-height: 14px !important;
+            span{
+                line-height: normal !important;
+                font-size: 1.7vw !important;
+            }
+        }
+    }
+    
+}
