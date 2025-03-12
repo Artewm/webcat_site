@@ -633,6 +633,12 @@ window.addEventListener('resize', updatePositionsAndBounds);
 //// Таймер для обновления позиций каждые 3 секунды
 setTimeout(updatePositionsAndBounds, 2000);
     
-    
+
+const arrowDown = document.querySelectorAll('.arrow_drop');
+arrowDown.forEach((arrow)=>{
+    arrow.addEventListener("click", ()=>{
+        
+    })
+});
 
 });

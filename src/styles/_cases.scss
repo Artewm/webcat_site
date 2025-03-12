@@ -353,9 +353,105 @@
         grid-template-columns: 1fr 2fr 1fr;
         padding: 0 5px;
     }
+    
     .partner_block{
         div{
             width: 100% !important;
         }
+    }
+}
+@media screen and (max-width: 430px){
+    .cases{
+        display: none;
+        
+    }
+    .cases_mb{
+        display: block !important;
+        height: auto;
+        padding-top: 10vw;
+        border-radius: 4.398vw 4.398vw 0px 0px;
+        transform: translateY(-16px);
+        background-color: white;
+    }
+    .cases_wrapper_mb{
+        font-family: 'FactorA-Light';
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        padding: 0 4%;
+        
+        .cases_head_mb{
+            h2{
+                display: inline-block;
+                font-family: 'JxTabeDemoRegular';
+                font-size: 11.276vw;
+            }
+        }
+        .case_card{
+            border-radius: 4.651vw;
+            border-top: 1px solid var(---, #B0B5C1);
+            border-bottom: 1px solid var(---, #B0B5C1);
+            display: grid;
+            
+            .card_header{
+                display: flex;
+                justify-content: space-between;
+                padding: 3% 4%;
+                
+            }
+            .card_body{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10% 0;
+                svg{
+                    width: 35.814vw;
+                }
+            }
+            .card_footer{
+                display: grid;
+                grid-template-columns: 5fr 1fr;
+                padding: 3% 4%;
+                p{
+                    display: inline-flex;
+                    border-radius: 5px;
+                    border: 0.263vw solid var(---, #B0B5C1);
+                    padding: 0.698vw 2.326vw;
+                    gap: 2px;
+                    margin-bottom: 0.8vw;
+                }
+                span{
+                    display: none;
+                }
+                .arrow_drop{
+                    width: 5.581vw;
+                    justify-self: end;
+                }
+                .more_tags{
+                    color: var(---, #FDFCF9);
+                    font-family: 'FactorA-Light';
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    background-color: $cat-blue;
+                    padding: 0.826vw;
+                    
+                }
+            }
+        }
+    .more_projects{
+        font-family: 'FactorA-Light';
+        height: 6.958vw !important;
+        width: 30.372vw;
+        border-radius: 4.4833vw 8.0833vw 0px 4.4833vw !important;
+        letter-spacing: 0.4px;
+        margin-top: 3vh;
+        background-color: black;
+        color: white;
+        justify-self: end;
+    }
+    
     }
 }
