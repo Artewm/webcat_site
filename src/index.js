@@ -634,11 +634,25 @@ window.addEventListener('resize', updatePositionsAndBounds);
 setTimeout(updatePositionsAndBounds, 2000);
     
 
-const arrowDown = document.querySelectorAll('.arrow_drop');
-arrowDown.forEach((arrow)=>{
-    arrow.addEventListener("click", ()=>{
+    document.querySelectorAll('.arrow_drop').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const card = this.closest('.case_card');
+            
+            const headerText = card.querySelector('.card_header p:first-child');
         
-    })
-});
+            const infoFrst = card.querySelector('.info_frst');
+            const infoScd = card.querySelector('.info_scd');
+            const moreTextBtn = card.querySelector('.more_tags');
+            const tagText = card.querySelectorAll('.card_footer .card_tags span');
+            
+            infoScd.style.display = infoScd.style.display === 'none' ? 'inline-block' : 'none';
+            infoFrst.style.display = infoScd.style.display === 'inline-block' ? 'none' : 'inline-block';
+            tagText.forEach(span => {
+                span.style.display = span.style.display === 'none' ? 'inline-block' : 'none';
+            });
+        });
+    });
 
 });

@@ -421,12 +421,13 @@
                     gap: 2px;
                     margin-bottom: 0.8vw;
                 }
-                span{
-                    display: none;
-                }
+                // span{
+                //     display: none;
+                // }
                 .arrow_drop{
                     width: 5.581vw;
                     justify-self: end;
+                    background-color: transparent;
                 }
                 .more_tags{
                     color: var(---, #FDFCF9);
