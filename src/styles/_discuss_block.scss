@@ -6,8 +6,8 @@
     display: flex;
     position: relative;
     width: 100%;
-    min-height: 45.25vw;
-
+    height: auto;
+    padding-bottom: 40px;
 
     &::before {
         position: absolute;
@@ -167,4 +167,85 @@
 }
 .discuss_foot__item{
     width: 20.21vw;
+}
+
+@media screen and (max-width: 430px){
+    .discuss_block{                
+        width: 430px;
+        height: 737px;
+        justify-content: center;
+        //align-items: end;
+        flex-direction: row-reverse;
+        form{
+            padding-left: 4%;
+            margin: 0;
+            align-self: flex-end;
+            h2{
+                font-size: 20px;
+                display: inline-block;
+                margin-bottom: 32px !important;
+            }
+            input::placeholder, textarea::placeholder{
+                font-size: 12px !important;
+                margin-bottom: 3px;
+                line-height: 12px;
+            }
+            textarea{
+                width: 100% !important;
+                height: auto !important;
+            }
+            .discuss_midle_part{
+                h2{
+                    margin-bottom: -2px !important;
+                }
+                .discuss_merge_input{
+                    flex-direction: column;
+                    .discuss_right_part{
+                        margin: 0;
+                    }
+                    .discuss_right_part, .discuss_left_part{
+                        input{
+                            width: 100%;
+                            margin-top: 28px;
+                        }
+                    }
+                }
+            }
+            .discuss_foot_part{
+                margin-top: 0;
+                button{
+                    display: flex;
+                    width: 235px;
+                    height: auto;
+                    padding: 10px 31px;
+                    margin: 36 0 24 0;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 80px;
+                    font-size: 20px;
+                    border-radius: 2vw;
+                }
+                span{ text-align: center;
+                    font-size: 8px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    a{
+                        font-size: 8px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+                };
+            }
+        }
+        .discuss_anim_block{
+            h2{
+                font-size: 44px;
+                position: absolute;
+                left: 0;
+                top: 53px;
+            }
+        }
+    }
 }

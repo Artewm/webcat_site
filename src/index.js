@@ -474,7 +474,10 @@ loader.load(
         if(document.documentElement.clientWidth > 834) {
             model.scale.set(3.3, 3.3, 3.3);
         }
-        else
+        else if(document.documentElement.clientWidth < 431){
+            model.scale.set(1, 1, 1);
+            model.rotateZ(0).rotateX(0.5).rotateY(0);
+        }
             model.scale.set(2.5, 2.5, 2.5);
     },
     (progress) => console.log(`Загрузка: ${(progress.loaded / progress.total) * 100}%`),
@@ -554,18 +557,18 @@ function updatePositionsAndBounds() {
         const maxOffsetY = containerWordsHeight - initialY - letterHeight;
 
         const targetTranslations = [
-            { x: 0, y: -112 },      // W
-            { x: 6.475, y: -180 },     // E    295.789 - 174.956
-            { x: 5.995, y: -53 },      // B    531.746 - 290.079
-            { x: 16.307, y: -147 },    // C    828 - 466
-            { x: 16.787, y: -180 },    // A
-            { x: -2.278, y: 91 },      // T
-            { x: 2.638, y: -80 },      // S
-            { x: 11.99, y: 40 },      // T
-            { x: -23.861, y: 145 },    // U
-            { x: 5.995, y: 165 },      // D
-            { x: -1.199, y: -127 },    // I
-            { x: 9.592, y: 120 }       // O
+            { x: 0, y: -82 },      // W
+            { x: 6.475, y: -160 },     // E    295.789 - 174.956
+            { x: 8, y: -47 },      // B    531.746 - 290.079
+            { x: 10.307, y: -97 },    // C    828 - 466
+            { x: 13.787, y: -150 },    // A
+            { x: -0.5, y: 51 },      // T
+            { x: 2.938, y: -65 },      // S
+            { x: 13.1, y: 45 },      // T
+            { x: -28, y: 145 },    // U
+            { x: 9.995, y: 165 },      // D
+            { x: 7, y: -86 },    // I
+            { x: 12.592, y: 70 }       // O
         ];
 
         const targetX = targetTranslations[index].x + 'vw'; 
@@ -646,12 +649,19 @@ setTimeout(updatePositionsAndBounds, 2000);
             const infoScd = card.querySelector('.info_scd');
             const moreTextBtn = card.querySelector('.more_tags');
             const tagText = card.querySelectorAll('.card_footer .card_tags span');
+            const arrowDropSvg = card.querySelector('.card_footer .arrow_drop svg');
             
+            arrowDropSvg.style.transform = arrowDropSvg.style.transform === '' ? 'rotateZ(180deg)' : '';
+            arrowDropSvg.style.alignSelf = arrowDropSvg.style.alignSelf === '' ? 'end' : '';
+
             infoScd.style.display = infoScd.style.display === 'none' ? 'inline-block' : 'none';
             infoFrst.style.display = infoScd.style.display === 'inline-block' ? 'none' : 'inline-block';
+            moreTextBtn.style.display = infoScd.style.display === 'inline-block' ? 'none' : '';
             tagText.forEach(span => {
                 span.style.display = span.style.display === 'none' ? 'inline-block' : 'none';
+                span.style.padding = '6% 0';
             });
+
         });
     });
 

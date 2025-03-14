@@ -368,7 +368,6 @@
     .cases_mb{
         display: block !important;
         height: auto;
-        padding-top: 10vw;
         border-radius: 4.398vw 4.398vw 0px 0px;
         transform: translateY(-16px);
         background-color: white;
@@ -376,11 +375,11 @@
     .cases_wrapper_mb{
         font-family: 'FactorA-Light';
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 1px;
+        grid-template-columns: 1fr; 
         padding: 0 4%;
         
         .cases_head_mb{
+            margin: 38px 0 13 0;
             h2{
                 display: inline-block;
                 font-family: 'JxTabeDemoRegular';
@@ -425,9 +424,15 @@
                 //     display: none;
                 // }
                 .arrow_drop{
-                    width: 5.581vw;
+                    width: 100%;
                     justify-self: end;
                     background-color: transparent;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    svg{
+                        width: 5.581vw;
+                    }
                 }
                 .more_tags{
                     color: var(---, #FDFCF9);

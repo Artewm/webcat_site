@@ -25,7 +25,7 @@
     }
     .letter, .shadow {
         position: absolute;
-        width: calc(90vw / 6 - 20px); /* Ширина для 6 букв в строке с учётом gap */
+        width: calc(90vw / 4.736 - 20px); /* Ширина для 6 букв в строке с учётом gap */
         height: auto; /* Высота определяется пропорциями SVG */
         pointer-events: none;
         top: 30%;
@@ -35,7 +35,7 @@
         z-index: 10;
     }
     .shadow {
-        opacity: 0.3;
+        opacity: 0.2;
         z-index: 1;
     }
     svg {
@@ -45,13 +45,16 @@
     }
 
     .letter-i, .shadow-i {
-        width: 2.1vw; /* Уменьшаем ширину "I" в два раза */
+        width: 2.4vw; /* Уменьшаем ширину "I" в два раза */
+    }
+    .shadow-i{
+        opacity: 0.2;
     }
    .container_word_row{
     display: flex;
    }
    .letter-o, .shadow-o{
-    margin-left: -10vw;
+    margin-left: -11.5vw;
    }
     
 }
