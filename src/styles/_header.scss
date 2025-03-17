@@ -307,6 +307,24 @@ header.hide {
     }
 }
 //phone_number
+.phone_number:hover{
+    color: #1758FF;
+}
+
+.socialMedi{
+    a:hover{
+        #insta{
+            fill: black;
+        }
+        #tg{
+            fill: black;
+        }
+    }
+}
+#insta:hover{
+    fill: black;
+}
+
 @media screen and (max-width: 834px){
     .phone_number{
         display: none;
@@ -314,9 +332,20 @@ header.hide {
     .toolbar{
         gap: 13.77vw;
     }
+    #media_1, #media_2{
+        width: 29px !important;
+    }
+    #logo{
+        width: 34px;
+    }
 }
 
 @media screen and (max-width: 430px){
+    .menu_btn{
+        p{
+            font-size: 18px !important;
+        }
+    }
     .logoHead {
         svg {
             width: 5.02vw;
@@ -336,10 +365,12 @@ header.hide {
                 content: "";
                 background: #1758FF;
                 width: 3.34375vw;
-                height: 0.1041vw;
-                top: 2.041vw;
+                height: 2px;
+                top: 12px;
                 position: absolute;
             }
+            
+            
         }
         .menu_exit{
             .phone_number{

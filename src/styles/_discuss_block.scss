@@ -171,12 +171,14 @@
 
 @media screen and (max-width: 430px){
     .discuss_block{                
-        width: 430px;
+        width: 100%;
         height: 737px;
-        justify-content: center;
+        justify-content: space-between;
         //align-items: end;
         flex-direction: row-reverse;
         form{
+            max-width: 100%;
+            width: 60vw;
             padding-left: 4%;
             margin: 0;
             align-self: flex-end;
@@ -215,9 +217,9 @@
                 margin-top: 0;
                 button{
                     display: flex;
-                    width: 235px;
+                    width: 100%;
                     height: auto;
-                    padding: 10px 31px;
+                    padding: 2.326vw 7.209vw;
                     margin: 36 0 24 0;
                     justify-content: center;
                     align-items: center;
@@ -240,6 +242,7 @@
             }
         }
         .discuss_anim_block{
+            width: 40vw;
             h2{
                 font-size: 44px;
                 position: absolute;

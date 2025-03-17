@@ -44,7 +44,8 @@ import py from './textures/py.jpg';
 import pz from './textures/pz.jpg';
 import { rotate } from 'three/tsl';
 
-window.addEventListener('load', function () {
+setTimeout(window.addEventListener('load', function () {
+    
     let progressElement = document.getElementById('progress');
     let preloader = document.getElementById('preloader');
     let spinner = document.querySelector('.spinner');
@@ -73,7 +74,7 @@ window.addEventListener('load', function () {
     window.addEventListener('load', hidePreloader);
     setTimeout(hidePreloader, 1500);
     
-      });
+      }), 1500);
 
 document.addEventListener("DOMContentLoaded", () => {
     const mediaQuery = window.matchMedia("(min-width: 1200px)");
@@ -471,14 +472,16 @@ loader.load(
     (gltf) => {
         model = gltf.scene;        
         scene.add(model.rotateZ(-0.2).rotateY(-0.2).rotateX(0.5));
+        scene.add(model);
         if(document.documentElement.clientWidth > 834) {
             model.scale.set(3.3, 3.3, 3.3);
         }
         else if(document.documentElement.clientWidth < 431){
-            model.scale.set(1, 1, 1);
-            model.rotateZ(0).rotateX(0.5).rotateY(0);
+            model.scale.set(1.6, 1.6, 1.6);
+            model.rotateZ(Math.PI * 1.1).rotateX(0.5).rotateY(0);
         }
-            model.scale.set(2.5, 2.5, 2.5);
+        else
+            model.scale.set(2.8, 2.8, 2.8);
     },
     (progress) => console.log(`Загрузка: ${(progress.loaded / progress.total) * 100}%`),
     (error) => console.error('Ошибка загрузки:', error)
@@ -492,9 +495,17 @@ document.addEventListener('mousemove', (event) => {
         const mouseX = ((event.clientX - rect.left) / container.clientWidth) * 1 - 1;
         const mouseY = -((event.clientY - rect.top) / container.clientHeight) * 1 + 1;
 
-        model.rotation.y = mouseX * 0.05; // Поворот по оси Y
-        model.rotation.x = mouseY * 0.15; // Поворот по оси X
-        model.rotation.z = -(mouseX * 0.1); // Поворот по оси Z
+        if(document.documentElement.clientWidth < 431){
+            model.rotation.y = mouseX * 0.05; // Поворот по оси Y
+            model.rotation.x = mouseY * 0.05; // Поворот по оси X
+        }
+        else{    
+           
+            model.rotation.y = mouseX * 0.05; // Поворот по оси Y
+            model.rotation.x = mouseY * 0.15; // Поворот по оси X
+            model.rotation.z = -(mouseX * 0.1); // Поворот по оси Z
+        }
+        
     }
 });
 

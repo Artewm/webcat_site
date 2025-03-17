@@ -312,8 +312,8 @@
         p{
             font-family: 'FactorA-Light' !important;
             font-weight: 400;
-            line-height: 1.9vw;
-            letter-spacing: 0.5px;
+            line-height: normal;
+            letter-spacing: normal;
         }
     }
     #white_block{
@@ -344,7 +344,7 @@
     .more_info_btn{
         border-radius: 2.0833vw 3.5833vw 0px 2.0833vw !important;
         padding: 0.7166vw 5.0208vw !important;
-        letter-spacing: 0.5px;
+        letter-spacing: normal;
     }
     
     #blue_block{
@@ -383,6 +383,7 @@
         color: $warm-white;
         padding: 6.279vw 11.628vw 0.326vw 0;
         font-size: 10vw !important;
+        margin: 56px 0 1.1979vw 0 !important;
     }
     .info_blocks_mb{
         grid-template-columns: repeat(1, 1fr) !important;
@@ -427,6 +428,7 @@
                     font-size: 3vw !important;
                     line-height: normal;
                     width: auto;
+                    letter-spacing: normal;
                 }
             }
             .more_info_btn{

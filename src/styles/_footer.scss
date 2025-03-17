@@ -104,7 +104,35 @@ footer {
             .footer_company{
                 line-height: 20px;
             }
+            .footer_socials{
+                order: -2;
+            }
+            .footer_email{order: -1;}
+    }   
+}
+@media screen and (max-width: 430px){
+    #footer_logo{
+        width: 5.581vw !important;
+        margin-bottom: 32px;
+    }
+    #footer_insta, #footer_tg{
+        svg{
+            width: 4.651vw !important;
+            padding-left: 6px;
+        }
+    }
+    .footer_socials{
+        padding-right: 4%;
+    }
+    .footer_mearge{
+        margin-top: 32px;
+        grid-template-rows: 40px;
+        a, li, h2{
+            font-size: 12px;
+        }
+        h2{
+            padding-top: 31px;
+        }
     }
 
-    
 }
