@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 //liquid effect анимация
-let hoverBlock1 = document.querySelectorAll(".hover1");
+    let hoverBlock1 = document.querySelectorAll(".hover1");
     let hoverBlock2 = document.querySelectorAll(".hover2");
     let waveLeft = document.querySelector(".wave-left");
     let waveRight = document.querySelector(".wave-right");
@@ -232,63 +232,83 @@ let hoverBlock1 = document.querySelectorAll(".hover1");
         return;
     }
 
-    // Обработка всех элементов с классом .hover1
+    // Обработка hover1
     hoverBlock1.forEach(function (block) {
         block.addEventListener("mouseenter", function () {
-           // console.log('Мышь наведена на кнопку .hover1');
-            waveLeft.style.animation = "wave-left 2s  ";
-            waveRight.style.animation = "wave-right 2s ";
+            waveLeft.style.animation = "wave-left 2s forwards";
+            waveRight.style.animation = "wave-right 2s forwards";
             waveLeft.style.backgroundColor = "#1758FF";
             waveRight.style.backgroundColor = "#1758FF";
-             // Применяем прозрачный цвет после завершения анимации
-             waveLeft.addEventListener("animationend", function handler() {
-                waveLeft.style.backgroundColor = "transparent";
+            
+            // Сбрасываем прозрачность только после завершения анимации
+            waveLeft.addEventListener("animationend", function handler() {
+                //waveLeft.style.backgroundColor = "transparent";
                 waveLeft.removeEventListener("animationend", handler);
             }, { once: true });
-    
-                waveRight.addEventListener("animationend", function handler() {
-                waveRight.style.backgroundColor = "transparent";
+            
+            waveRight.addEventListener("animationend", function handler() {
+                // waveRight.style.backgroundColor = "transparent";
                 waveRight.removeEventListener("animationend", handler);
             }, { once: true });
         });
 
         block.addEventListener("mouseleave", function () {
-            // console.log('Мышь убрана с кнопки .hover1');
-            waveLeft.style.animation = ""; // Возвращаем исходную анимацию из CSS
-            waveRight.style.animation = "";
-            waveLeft.style.backgroundColor = "transparent";
-            waveRight.style.backgroundColor = "transparent";
+            // Запускаем обратную анимацию
+            waveLeft.style.animation = "wave-left-reverse 2s forwards";
+            waveRight.style.animation = "wave-right-reverse 2s forwards";
+            waveLeft.style.backgroundColor = "#1758FF";
+            waveRight.style.backgroundColor = "#1758FF";
+            
+            waveLeft.addEventListener("animationend", function handler() {
+                // waveLeft.style.backgroundColor = "transparent";
+                waveLeft.removeEventListener("animationend", handler);
+            }, { once: true });
+            
+            waveRight.addEventListener("animationend", function handler() {
+                // waveRight.style.backgroundColor = "transparent";
+                waveRight.removeEventListener("animationend", handler);
+            }, { once: true });
         });
     });
 
-    // Обработка всех элементов с классом .hover2
+    // Обработка hover2
     hoverBlock2.forEach(function (block) {
         block.addEventListener("mouseenter", function () {
-            // console.log('Мышь наведена на кнопку .hover2');
-            waveLeft2.style.animation = "wave-left 2s  ";
-            waveRight2.style.animation = "wave-right 2s ";
-             waveLeft2.style.backgroundColor = "#1758FF";
+            waveLeft2.style.animation = "wave-left 2s forwards";
+            waveRight2.style.animation = "wave-right 2s forwards";
+            waveLeft2.style.backgroundColor = "#1758FF";
             waveRight2.style.backgroundColor = "#1758FF";
-            // Применяем прозрачный цвет после завершения анимации
+            
             waveLeft2.addEventListener("animationend", function handler() {
-            waveLeft2.style.backgroundColor = "transparent";
-            waveLeft2.removeEventListener("animationend", handler);
-        }, { once: true });
-
+                // waveLeft2.style.backgroundColor = "transparent";
+                waveLeft2.removeEventListener("animationend", handler);
+            }, { once: true });
+            
             waveRight2.addEventListener("animationend", function handler() {
-            waveRight2.style.backgroundColor = "transparent";
-            waveRight2.removeEventListener("animationend", handler);
-        }, { once: true });
+                // waveRight2.style.backgroundColor = "transparent";
+                waveRight2.removeEventListener("animationend", handler);
+            }, { once: true });
         });
 
         block.addEventListener("mouseleave", function () {
-            // console.log('Мышь убрана с кнопки .hover2');
-            waveLeft2.style.animation = ""; // Возвращаем исходную анимацию из CSS
-            waveRight2.style.animation = "";
-            waveLeft2.style.backgroundColor = "transparent";
-            waveRight2.style.backgroundColor = "transparent";
+            waveLeft2.style.animation = "wave-left-reverse 2s forwards";
+            waveRight2.style.animation = "wave-right-reverse 2s forwards";
+            waveLeft2.style.backgroundColor = "#1758FF";
+            waveRight2.style.backgroundColor = "#1758FF";
+            
+            waveLeft2.addEventListener("animationend", function handler() {
+                // waveLeft2.style.backgroundColor = "transparent";
+                waveLeft2.removeEventListener("animationend", handler);
+            }, { once: true });
+            
+            waveRight2.addEventListener("animationend", function handler() {
+                // waveRight2.style.backgroundColor = "transparent";
+                waveRight2.removeEventListener("animationend", handler);
+            }, { once: true });
         });
     });
+
+
 //Увеличить размер
     function logo_anim() {
         setTimeout(() => {

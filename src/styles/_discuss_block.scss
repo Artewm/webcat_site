@@ -7,7 +7,7 @@
     position: relative;
     width: 100%;
     height: auto;
-    padding-bottom: 40px;
+    padding-bottom: 115px;
 
     &::before {
         position: absolute;
@@ -136,9 +136,12 @@
         }
     }
     @media screen and (max-width: 1280px){
+        .discuss_block{
+            padding-bottom: 77px !important;
+        }
         .discuss_foot_part{
-            margin-top: 6.44vw;
-            margin-bottom: 7.44vw;
+            margin-top: 108px;
+            
         }
     }
     span {

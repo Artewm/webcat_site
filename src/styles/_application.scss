@@ -30,7 +30,7 @@
     height: 96.4814vh;
     margin: 0%;
 
-    border-radius: 0px 0px 3.7037vh 3.7037vh;
+    border-radius: 3.7037vh 0px 0px 3.7037vh;
     background-color: $warm-white;
 
     z-index: 2;
@@ -188,6 +188,7 @@
         position: absolute;
         top: 0;
         padding-bottom: 30px;
+        border-radius: 0px 0px 3.7037vh 3.7037vh;
     }
     .discuss_wrapper_inside{
         height: 100%;

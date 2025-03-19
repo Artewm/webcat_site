@@ -32,14 +32,14 @@
     //Здесь анимация 
     .background_hover_left, .background_hover_right {
         position: absolute;
-        bottom: -5%;
+        bottom: -6%;
         right: -3.3%;
         transform: rotate(45deg);
         border-radius: 0.4vw;
-        background-color: none;
-
-        height: 2.5vw;
+        background-color: transparent;
+        height: 3vw;
         width: 3vw;
+        filter: url(#goo);
 
         filter: url("#goo");
 
@@ -47,8 +47,8 @@
             position: absolute;
             left: 0%;
             top: 0%;
-            height: 2.5vw;
-            width: 3vw;
+            height: 100%;
+            width: 100%;
             overflow: hidden;
             //background-color: $cat-blue;
         }
@@ -94,38 +94,26 @@
                 transform: translateX(0);
                 height: 13.021vw;
             }
-            50% {
-                transform: translateX(2.08vw);
-                height: 26.042vw;
-            }
             100% {
                 transform: translateX(2.08vw);
                 height: 26.042vw;
             }
         }
-    
+        
         @keyframes wave-right {
             0% {
                 transform: translateX(0);
                 height: 13.021vw;
             }
-            50% {
-                transform: translateX(-2.08vw);
-                height: 26.042vw;
-            }
             100% {
                 transform: translateX(-2.08vw);
                 height: 26.042vw;
             }
         }
-        @keyframes wave-left-leave {
+        
+        @keyframes wave-left-reverse {
             0% {
-                
-                transform: translateX(35px);
-                height: 26.042vw;
-            }
-            50% {
-                transform: translateX(35px);
+                transform: translateX(2.08vw);
                 height: 26.042vw;
             }
             100% {
@@ -133,18 +121,13 @@
                 height: 13.021vw;
             }
         }
-    
-        @keyframes wave-right-leave {
+        
+        @keyframes wave-right-reverse {
             0% {
-                transform: translateX(-25px);
-                height: 26.042vw;
-            }
-            50% {
-                transform: translateX(-25px);
+                transform: translateX(-2.08vw);
                 height: 26.042vw;
             }
             100% {
-                
                 transform: translateX(0);
                 height: 13.021vw;
             }
@@ -152,9 +135,9 @@
     }
     .background_hover_right{
         position: absolute;
-        top: -5% !important;
+        top: -7% !important;
         right: -3.3%;
-       transform: rotate(-45deg);
+        transform: rotate(-45deg);
 
        .block_hover_right {
         position: absolute;
@@ -200,8 +183,8 @@
 
     .info_block {
         position: relative;
-        width: 39.0625vw;
-        height: 20.625vw;
+        width: 100%;
+        height: 100%;
         padding: 2.4479vw 3.3854vw;
 
         border-radius: 2.0833vw;
